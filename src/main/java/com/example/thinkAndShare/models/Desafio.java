@@ -1,15 +1,17 @@
 package com.example.thinkAndShare.models;
 
 import java.util.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="ideas")
+@Document(collection="desafios")
 @JsonIgnoreProperties(value = {"createdAt"}, allowGetters = true)
-public class Idea {
+public class Desafio {
     @Id
     private String id;
 
@@ -21,25 +23,24 @@ public class Idea {
     @Size(max=280)
     private String descripcion;
 
-    private int nota;
-    private int meGusta;
-    private int idDesafio;
-    private int idIdeador;
-    private int numeroComentarios;
-
+    private Date inicio = new Date();
+    private Date termino = new Date();
     private Date createdAt = new Date();
 
-    public Idea() {
+    public Desafio() {
         super();
     }
 
-    public Idea(String titulo, String descripcion, int idDesafio) {
-        this.nota = 0;
+    public Desafio(String titulo, String descripcion, String inicio, String termino) {
         this.titulo = titulo;
-        this.meGusta = 0;
-        this.idDesafio = idDesafio;
         this.descripcion = descripcion;
-        this.numeroComentarios = 0;
+        try {
+            this.inicio = new SimpleDateFormat("dd/MM/yyyy").parse(inicio);
+            this.inicio = new SimpleDateFormat("dd/MM/yyyy").parse(termino);
+        }
+        catch (ParseException e) {
+            System.out.println("Formato de fecha incorrecto");
+        }
     }
 
     public String getId() {
@@ -52,6 +53,14 @@ public class Idea {
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public Date getTermino() {
+        return termino;
     }
 
     public Date getCreatedAt() {
