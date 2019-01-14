@@ -81,7 +81,7 @@
     height: 3em;
     width: 10em;
     margin-top: 1%;
-    margin-left: 30%;
+    margin-left: 55%;
     font-size: medium;
     padding: 5px 10px;
     border-radius: 10px;
@@ -112,7 +112,7 @@
   }
   
   .example-container {
-    width: 40%;
+    width: 400%;
     height: 10%;
   }
   .example-user-input {
@@ -128,7 +128,7 @@
     flex-direction: column;
     margin-top: 2.5em;
     height: 15em;
-    width: 300%;
+    width: 200%;
     max-width: 300%;
     color: #bf0b25;
     background-color: rgba(190, 187, 187, 0.24);
