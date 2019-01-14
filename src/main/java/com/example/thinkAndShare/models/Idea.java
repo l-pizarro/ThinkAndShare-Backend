@@ -43,15 +43,31 @@ public class Idea {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return this.descripcion;
+    }
+
+    public int getMeGusta() {
+        return this.meGusta;
+    }
+
+    public void setMeGusta(int meGusta) {
+        this.meGusta = meGusta;
+    }
+
+    public int getNumeroComentarios() {
+        return this.numeroComentarios;
+    }
+
+    public void setNumeroComentarios(int numeroComentarios) {
+        this.numeroComentarios = numeroComentarios;
     }
 
     public Date getCreatedAt() {
