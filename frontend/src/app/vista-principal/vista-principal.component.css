@@ -1,0 +1,146 @@
+/* VistaPrincipalComponent's private CSS styles */
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+  }
+  .heroes li { /*Cuadro que contiene titulo*/
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+    background-color: rgb(250, 249, 249);
+    margin: .5em;
+    padding: .2em 0;
+    height: 1.8em;
+    width: 370px;
+    border-radius: 4px;
+  }
+  
+  .heroes li:hover {
+    color: #bf0b25;
+    background-color: #DDD;
+    left: .1em;
+  }
+  
+  .heroes a { /*Texto titulo idea*/
+    color: rgb(7, 0, 0);
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: 200px;
+  }
+  
+  .heroes a:hover {
+    color:rgb(139, 96, 102);
+  }
+  
+  .heroes .badge { /*Lista Autores*/
+    display: inline-block;
+    font-size: small;
+    color: rgb(255, 255, 255);
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #bf0b25;
+    line-height: 1em;
+    position: relative;
+    left: -2px;
+    top: -2px;
+    height: 1.9em;
+    width: 60px;
+    text-align: left;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  .pos {
+    display: inline-block;
+    margin-top: 2.5em;
+    flex-direction: column;
+    max-width: 200%;
+  }
+  .pos2 {
+    float: left;
+    margin-left: 20em;
+  }
+  .des { /*Lista desafios creo*/
+    margin-top: 4%;
+    margin-left: 10%;
+
+  }
+  input.tit{
+    min-height: 2em;
+    width: 20em;
+    margin-top: 20px;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+  textarea.desc{
+    font-size: medium;
+    margin-top: 2em;
+    height: 8em;
+    
+  }
+  button.post { /*Botón publicar*/
+    background-color: #bf0b25;
+    color: rgb(255, 255, 255);
+    border: none;
+    height: 3em;
+    width: 10em;
+    margin-top: 1%;
+    margin-left: 30%;
+    font-size: medium;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    cursor: hand;
+    font-family: Arial;
+  }
+  
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  
+  button.delete { /*Boton eliminar*/
+    position: relative;
+    left: 330px;
+    top: -36px;
+    border: none;
+
+    background-color: gray !important;
+    color: white;
+    border-radius: 10px;
+    font-family: Arial;
+    padding: 7px 10px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container {
+    width: 40%;
+    height: 10%;
+  }
+  .example-user-input {
+    margin-right: 0%;
+  }
+  .porfa{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .example-card{
+    flex-direction: row;
+    margin-top: 2.5em;
+    height: 15em;
+    width: 260%;
+    color: #bf0b25;
+    background-color: rgba(153, 153, 153, 0.5);
+    max-width: 280%;
+    max-font-size: 280%;
+    max-height: 280%;
+    max-lines: 280;
+  }

@@ -1,0 +1,24 @@
+<h2>Think & Share</h2>
+<div class="pos">
+<ul>
+  <li *ngFor="let idea of ideas">
+    <a routerLink="/idea/{{idea.id}}">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ idea.titulo}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{idea.descripcion}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="like" mat-icon-button (click)="onClickMe()">
+          <mat-icon>favorite</mat-icon></button>{{idea.meGusta}}
+      </mat-card-actions>
+    </mat-card>
+    </a>
+  </li>
+</ul>
+</div>
