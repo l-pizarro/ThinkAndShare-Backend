@@ -1,6 +1,6 @@
 /* VistaPrincipalComponent's private CSS styles */
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("../images/percy.jpg");
   background-size: cover;
 }
 .heroes {
@@ -55,16 +55,7 @@
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-  .pos {
-    display: inline-block;
-    margin-top: 2.5em;
-    flex-direction: column;
-    max-width: 200%;
-  }
-  .pos2 {
-    float: left;
-    margin-left: 20em;
-  }
+
   .des { /*Lista desafios creo*/
     margin-top: 4%;
     margin-left: 10%;
@@ -133,14 +124,23 @@
   }
 
   .example-card{
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     margin-top: 2.5em;
     height: 15em;
-    width: 260%;
+    width: 300%;
+    max-width: 300%;
     color: #bf0b25;
-    background-color: rgba(153, 153, 153, 0.5);
+    background-color: rgba(190, 187, 187, 0.24);
     max-width: 280%;
-    max-font-size: 280%;
     max-height: 280%;
     max-lines: 280;
   }
+  .lista-ideas{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 50%;
+    height: 10%;
+  }
+
