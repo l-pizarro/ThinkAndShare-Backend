@@ -92,6 +92,10 @@ public class Idea {
         this.comentarios = comentarios;
     }
 
+    public int getIdDesafio() {
+        return this.idDesafio;
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }

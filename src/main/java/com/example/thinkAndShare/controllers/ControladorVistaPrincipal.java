@@ -26,9 +26,9 @@ public class ControladorVistaPrincipal {
     DesafioRepository desafioRepository;
 
     @PostMapping("/ideas")
-    public Idea publicarIdea(String titulo, String descripcion, int idDesafio, String nombreIdeador) {
-        Idea idea = new Idea(titulo, descripcion, idDesafio, nombreIdeador);
-        return ideaRepository.save(idea);
+    public Idea publicarIdea(@Valid @RequestBody Idea idea) {
+        Idea nuevaIdea = new Idea(idea.getTitulo(), idea.getDescripcion(), idea.getIdDesafio(), idea.getNombreIdeador());
+        return ideaRepository.save(nuevaIdea);
     };
 
     @GetMapping("/ideas")
