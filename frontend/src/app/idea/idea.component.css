@@ -1,6 +1,6 @@
 /* Idea's private CSS styles */
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("../images/erizo.jpg");
   background-size: cover;
 }
 
@@ -58,15 +58,6 @@ label {
     font-size: medium;
     margin-top: 2%;
   }
-  .example-container {
-    margin-top: 2%;
-    width: 35%;
-    font-size: 12px;
-  }
-  .example-container {
-    display: flex;
-    flex-direction: column;
-  }
   .algo{
     margin-top: 2%;
     width: 40%;
@@ -74,8 +65,12 @@ label {
   .example-card{
     margin-top: 3%;
     width: 40%;
-    height: 20em;
+    background-color: rgba(190, 187, 187, 0.24);
+    height: 25em;
+    max-height: 25em;
+    word-wrap:break-word;
+
   }
   .test{
-    margin-top: 25%
+    margin-top: 20%
   }

@@ -1,61 +1,22 @@
 /* VistaPrincipalComponent's private CSS styles */
+.titulo{
+  cursor: pointer;
+  border: none;
+  font: normal 400%/normal Arial Black, Gadget, sans-serif;
+  color: #bf0b25;
+  text-align: center;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  text-shadow: 0 1px 0 rgba(94,76,76,1) , 0 2px 0 rgba(96,50,50,1) , 0 3px 0 rgba(28,21,21,1) , 0 4px 0 rgba(7,6,6,1) , 0 5px 0 rgba(12,1,1,1) , 0 6px 1px rgba(0,0,0,0.0980392) , 0 0 5px rgba(0,0,0,0.0980392) , 0 1px 3px rgba(68,27,27,0.29) , 0 3px 5px rgba(0,0,0,0.2) , 0 5px 10px rgba(0,0,0,0.247059) , 0 10px 10px rgba(0,0,0,0.2) , 0 20px 20px rgba(0,0,0,0.14902) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
 .example-header-image {
   background-image: url("../images/percy.jpg");
   background-size: cover;
 }
-.heroes {
-    margin: 0 0 2em 0;
-    list-style-type: none;
-    padding: 0;
-    width: 15em;
-  }
-  .heroes li { /*Cuadro que contiene titulo*/
-    position: relative;
-    top: 1px;
-    cursor: pointer;
-    background-color: rgb(250, 249, 249);
-    margin: .5em;
-    padding: .2em 0;
-    height: 1.8em;
-    width: 370px;
-    border-radius: 4px;
-  }
-  
-  .heroes li:hover {
-    color: #bf0b25;
-    background-color: #DDD;
-    left: .1em;
-  }
-  
-  .heroes a { /*Texto titulo idea*/
-    color: rgb(7, 0, 0);
-    text-decoration: none;
-    position: relative;
-    display: block;
-    width: 200px;
-  }
-  
-  .heroes a:hover {
-    color:rgb(139, 96, 102);
-  }
-  
-  .heroes .badge { /*Lista Autores*/
-    display: inline-block;
-    font-size: small;
-    color: rgb(255, 255, 255);
-    padding: 0.8em 0.7em 0 0.7em;
-    background-color: #bf0b25;
-    line-height: 1em;
-    position: relative;
-    left: -2px;
-    top: -2px;
-    height: 1.9em;
-    width: 60px;
-    text-align: left;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
-  }
-
   .des { /*Lista desafios creo*/
     margin-top: 4%;
     margin-left: 10%;
@@ -109,12 +70,11 @@
   .example-container {
     display: flex;
     flex-direction: column;
-  }
-  
-  .example-container {
+    margin-left: 5%;
     width: 50%;
     height: 10%;
   }
+  
   .example-user-input {
     margin-right: 0%;
   }
@@ -127,7 +87,6 @@
     display: flex;
     flex-direction: column;
     margin-top: 2.5em;
-    height: 15em;
     width: 200%;
     max-width: 300%;
     color: #bf0b25;
@@ -135,14 +94,19 @@
     max-width: 280%;
     max-height: 280%;
     max-lines: 280;
+    word-wrap:break-word;
   }
   .lista-ideas{
     display: flex;
     flex-direction: column;
-    width: 50%;
-    max-width: 40%;
-    height: 10%;
-    margin-left: 10%;
+    width: 30%;
+    max-width: 30%;
     margin-right: 50%;
+  }
+  .test{
+    margin-top: 25%
+  }
+  .descripcion{
+    margin-top: .5%;
   }
 

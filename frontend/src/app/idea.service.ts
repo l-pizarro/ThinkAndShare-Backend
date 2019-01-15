@@ -14,6 +14,7 @@ const httpOptions = {
 
 @Injectable()
 export class IdeaService {
+  private ideasUrl = 'http://127.0.0.1:8080/api/idea';
 
   constructor(
     private http: HttpClient,
@@ -25,12 +26,13 @@ export class IdeaService {
     return this.http.get('//localhost:8080/api/ideas');
   }
 
-  /** GET hero by id. Will 404 if id not found */
+  /** AQUI ESTA EL ERROR, FALLA EN EL CRUD GET idea by id. Will 404 if id not found */
   getIdea(id: String): Observable<Idea> {
-    return this.http.get<Idea>('http://127.0.0.1:8080/api/ideas').pipe(
-      tap(_ => this.log(`fetched idea id=${id}`)),
-      catchError(this.handleError<Idea>(`getIdea id=${id}`))
-    );
+    const url = `${this.ideasUrl}/${id}`;
+    
+    return this.http.get<Idea>(url); /*.pipe(catchError(<Idea>(`getIdea id=${id}`))
+     );*/
+    
   }
 
   /**

@@ -1,10 +1,11 @@
 <!--<button (click)="goBack()">go back</button>-->
-<div *ngIf="idea">
+<div class="zoom" *ngIf="idea">
     <!--<button (click)="save()">save</button> -->
     <mat-card class="example-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>{{ idea.titulo}}</mat-card-title>
+              <mat-card-title>{{idea.titulo}}</mat-card-title>
+              <mat-card-subtitle><!--{{hero.autor}}-->Autor</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
               <p>
@@ -24,5 +25,4 @@
             </mat-form-field>
 
         <button class="post" mat-raised-button (click)="onClickMe()">Comentar</button>
-
     </div>
