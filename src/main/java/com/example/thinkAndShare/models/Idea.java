@@ -1,6 +1,8 @@
 package com.example.thinkAndShare.models;
 
 import java.util.Date;
+import java.util.List;
+import java.util.ArrayList;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -25,7 +27,9 @@ public class Idea {
     private int meGusta;
     private int idDesafio;
     private int idIdeador;
+    private String nombreIdeador;
     private int numeroComentarios;
+    private ArrayList<ArrayList<String>> comentarios;
 
     private Date createdAt = new Date();
 
@@ -33,13 +37,15 @@ public class Idea {
         super();
     }
 
-    public Idea(String titulo, String descripcion, int idDesafio) {
+    public Idea(String titulo, String descripcion, int idDesafio, String nombreIdeador) {
         this.nota = 0;
         this.titulo = titulo;
         this.meGusta = 0;
         this.idDesafio = idDesafio;
         this.descripcion = descripcion;
         this.numeroComentarios = 0;
+        this.nombreIdeador = nombreIdeador;
+        this.comentarios = new ArrayList<ArrayList<String>>();
     }
 
     public String getId() {
@@ -62,12 +68,28 @@ public class Idea {
         this.meGusta = meGusta;
     }
 
+    public String getNombreIdeador() {
+        return this.nombreIdeador;
+    }
+
+    public void setNombreIdeador(String nombreIdeador) {
+        this.nombreIdeador = nombreIdeador;
+    }
+
     public int getNumeroComentarios() {
         return this.numeroComentarios;
     }
 
     public void setNumeroComentarios(int numeroComentarios) {
         this.numeroComentarios = numeroComentarios;
+    }
+
+    public ArrayList<ArrayList<String>> getComentarios() {
+        return this.comentarios;
+    }
+
+    public void setComentarios(ArrayList<ArrayList<String>> comentarios) {
+        this.comentarios = comentarios;
     }
 
     public Date getCreatedAt() {
