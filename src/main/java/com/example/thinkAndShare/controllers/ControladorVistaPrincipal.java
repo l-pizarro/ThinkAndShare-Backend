@@ -36,6 +36,11 @@ public class ControladorVistaPrincipal {
         return ideaRepository.findAll(sortByCreatedAtDesc);
     };
 
+    @GetMapping("/idea/{id}")
+    public Idea obtenerIdea(@PathVariable String id) {
+        return ideaRepository.findByid(id);
+    };
+
     @PostMapping("/desafios")
     public Desafio publicarDesafio(String titulo, String descripcion, String inicio, String termino) {
         Desafio desafio = new Desafio(titulo, descripcion, inicio, termino);
