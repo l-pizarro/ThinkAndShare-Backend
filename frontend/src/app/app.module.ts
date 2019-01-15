@@ -45,6 +45,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { VistaAdministradorComponent } from './vista-administrador/vista-administrador.component';
 
 
 
@@ -52,7 +53,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   declarations: [
     AppComponent,
     IdeaComponent,
-    VistaPrincipalComponent
+    VistaPrincipalComponent,
+    VistaAdministradorComponent
   ],
   imports: [
     BrowserModule,
