@@ -3,15 +3,15 @@ package com.example.thinkAndShare.requests;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-public class ComentarioRequest {
+public class Comentario {
     private String nombreIdeador;
     private String comentario;
 
-    public ComentarioRequest() {
+    public Comentario() {
         super();
     }
 
-    public ComentarioRequest(String nombreIdeador, String comentario) {
+    public Comentario(String nombreIdeador, String comentario) {
         this.nombreIdeador = nombreIdeador;
         this.comentario = comentario;
     }
