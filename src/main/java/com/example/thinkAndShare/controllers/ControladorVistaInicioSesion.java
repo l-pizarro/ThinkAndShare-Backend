@@ -1,0 +1,3 @@
+/*
+    Trasladar aqui las funciones necesarias desde el controlador principal
+*/

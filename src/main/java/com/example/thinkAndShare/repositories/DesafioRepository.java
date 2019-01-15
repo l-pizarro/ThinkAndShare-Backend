@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface DesafioRepository extends MongoRepository<Desafio, String> {
-
+    Desafio findByid(String id);
 }

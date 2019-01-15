@@ -54,10 +54,14 @@ public class ControladorVistaPrincipal {
         return desafioRepository.findAll(sortByCreatedAtDesc);
     };
 
+    @GetMapping("/desafio/{id}")
+    public Desafio obtenerDesafio(@PathVariable String id) {
+        return desafioRepository.findByid(id);
+    };
+
     @PostMapping("/{id}/megusta")
     public Idea darMeGustaIdea(@PathVariable String id) {
         Idea idea = ideaRepository.findByid(id);
-        System.out.println(idea.getId());
         idea.setMeGusta(idea.getMeGusta() + 1);
         return ideaRepository.save(idea);
     }
@@ -73,6 +77,7 @@ public class ControladorVistaPrincipal {
         nuevoComentario.add(idIdeador);
         comentarios.add(nuevoComentario);
         idea.setComentarios(comentarios);
+        idea.setNumeroComentarios(idea.getNumeroComentarios()+1);
         return ideaRepository.save(idea);
     }
 
@@ -92,12 +97,21 @@ public class ControladorVistaPrincipal {
         return ideasFiltradas;
     };
 
-    // @GetMapping("/ideas/ordenar/{criterio}")
-    // public ArrayList<Idea> ordenarIdeas(@PathVariable int criterio) {
-    //     List<Idea> ideas = ideaRepository.findAll();
-    //     ArrayList<Idea> ideasOrdenadas = new ArrayList<Idea>();
-    //
-    //     return ideasOrdenadas;
-    // };
+    @GetMapping("/ideas/ordenar/{criterio}")
+    public List<Idea> ordenarIdeas(@PathVariable int criterio) {
+        Sort ordenamiento = new Sort(Sort.Direction.DESC, "createdAt");
+
+        if (criterio == 1) {
+            ordenamiento = new Sort(Sort.Direction.DESC, "meGusta");
+        }
+        else if (criterio == 2) {
+            ordenamiento = new Sort(Sort.Direction.DESC, "numeroComentarios");
+        }
+        else if (criterio == 3) {
+            ordenamiento = new Sort(Sort.Direction.ASC, "createdAt");
+        }
+
+        return ideaRepository.findAll(ordenamiento);
+    };
 
 }
