@@ -2,6 +2,7 @@ package com.example.thinkAndShare.controllers;
 
 import com.example.thinkAndShare.models.Idea;
 import com.example.thinkAndShare.models.Desafio;
+import com.example.thinkAndShare.requests.ComentarioRequest;
 import com.example.thinkAndShare.repositories.IdeaRepository;
 import com.example.thinkAndShare.repositories.DesafioRepository;
 
@@ -67,14 +68,12 @@ public class ControladorVistaPrincipal {
     }
 
     @PutMapping("/{id}/comentar")
-    public Idea comentarIdea(@PathVariable String id, @RequestParam(value = "comentario")String comentario,
-                            @RequestParam(value = "idIdeador")String idIdeador) {
-
+    public Idea comentarIdea(@PathVariable String id, @Valid @RequestBody ComentarioRequest request) {
         Idea idea = ideaRepository.findByid(id);
         ArrayList<ArrayList<String>> comentarios = idea.getComentarios();
         ArrayList<String> nuevoComentario = new ArrayList<String>();
-        nuevoComentario.add(comentario);
-        nuevoComentario.add(idIdeador);
+        nuevoComentario.add(request.getComentario());
+        nuevoComentario.add(request.getNombreIdeador());
         comentarios.add(nuevoComentario);
         idea.setComentarios(comentarios);
         idea.setNumeroComentarios(idea.getNumeroComentarios()+1);
