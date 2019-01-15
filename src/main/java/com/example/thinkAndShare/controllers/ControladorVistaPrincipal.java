@@ -69,6 +69,7 @@ public class ControladorVistaPrincipal {
 
     @PostMapping("/{id}/comentar")
     public Idea comentarIdea(@PathVariable String id, @Valid @RequestBody Comentario request) {
+        System.out.println("comentando");
         Idea idea = ideaRepository.findByid(id);
         ArrayList<ArrayList<String>> comentarios = idea.getComentarios();
         ArrayList<String> nuevoComentario = new ArrayList<String>();
