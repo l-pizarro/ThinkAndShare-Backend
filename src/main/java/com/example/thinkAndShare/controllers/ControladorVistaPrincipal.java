@@ -134,12 +134,6 @@ public class ControladorVistaPrincipal {
         Sort ordenamiento = new Sort(Sort.Direction.DESC, "createdAt");
 
         if (criterio == 1) {
-            ordenamiento = new Sort(Sort.Direction.DESC, "meGusta");
-        }
-        else if (criterio == 2) {
-            ordenamiento = new Sort(Sort.Direction.DESC, "numeroComentarios");
-        }
-        else if (criterio == 3) {
             ordenamiento = new Sort(Sort.Direction.ASC, "createdAt");
         }
 
