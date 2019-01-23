@@ -69,7 +69,6 @@ public class ControladorVistaPrincipal {
 
     @PostMapping("/{id}/comentar")
     public Idea comentarIdea(@PathVariable String id, @Valid @RequestBody Comentario request) {
-        System.out.println("comentando");
         Idea idea = ideaRepository.findByid(id);
         ArrayList<ArrayList<String>> comentarios = idea.getComentarios();
         ArrayList<String> nuevoComentario = new ArrayList<String>();
@@ -112,6 +111,39 @@ public class ControladorVistaPrincipal {
         }
 
         return ideaRepository.findAll(ordenamiento);
+    };
+
+    @GetMapping("/desafios/filtrar/{termino}")
+    public ArrayList<Desafio> filtrarDesafios(@PathVariable String termino) {
+        List<Desafio> desafios = desafioRepository.findAll();
+        ArrayList<Desafio> desafiosFiltrados = new ArrayList<Desafio>();
+
+        for (int i = 0; i < desafios.size(); i++) {
+            if (desafios.get(i).getTitulo().toLowerCase().contains(termino.toLowerCase())) {
+                desafiosFiltrados.add(desafios.get(i));
+            }
+            else if (desafios.get(i).getDescripcion().toLowerCase().contains(termino.toLowerCase())) {
+                desafiosFiltrados.add(desafios.get(i));
+            }
+        }
+        return desafiosFiltrados;
+    };
+
+    @GetMapping("/desafios/ordenar/{criterio}")
+    public List<Desafio> ordenarDesafios(@PathVariable int criterio) {
+        Sort ordenamiento = new Sort(Sort.Direction.DESC, "createdAt");
+
+        if (criterio == 1) {
+            ordenamiento = new Sort(Sort.Direction.DESC, "meGusta");
+        }
+        else if (criterio == 2) {
+            ordenamiento = new Sort(Sort.Direction.DESC, "numeroComentarios");
+        }
+        else if (criterio == 3) {
+            ordenamiento = new Sort(Sort.Direction.ASC, "createdAt");
+        }
+
+        return desafioRepository.findAll(ordenamiento);
     };
 
 }
