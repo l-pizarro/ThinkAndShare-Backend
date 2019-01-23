@@ -25,7 +25,7 @@ public class Idea {
 
     private int nota;
     private int meGusta;
-    private int idDesafio;
+    private String idDesafio;
     private int idIdeador;
     private String nombreIdeador;
     private int numeroComentarios;
@@ -37,7 +37,7 @@ public class Idea {
         super();
     }
 
-    public Idea(String titulo, String descripcion, int idDesafio, String nombreIdeador) {
+    public Idea(String titulo, String descripcion, String idDesafio, String nombreIdeador) {
         this.nota = 0;
         this.titulo = titulo;
         this.meGusta = 0;
@@ -92,7 +92,7 @@ public class Idea {
         this.comentarios = comentarios;
     }
 
-    public int getIdDesafio() {
+    public String getIdDesafio() {
         return this.idDesafio;
     }
 
