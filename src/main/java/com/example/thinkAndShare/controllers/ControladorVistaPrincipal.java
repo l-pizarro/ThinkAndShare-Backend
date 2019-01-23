@@ -87,10 +87,10 @@ public class ControladorVistaPrincipal {
         ArrayList<Idea> ideasFiltradas = new ArrayList<Idea>();
 
         for (int i = 0; i < ideas.size(); i++) {
-            if (ideas.get(i).getTitulo().contains(termino)) {
+            if (ideas.get(i).getTitulo().toLowerCase().contains(termino.toLowerCase())) {
                 ideasFiltradas.add(ideas.get(i));
             }
-            else if (ideas.get(i).getDescripcion().contains(termino)) {
+            else if (ideas.get(i).getDescripcion().toLowerCase().contains(termino.toLowerCase())) {
                 ideasFiltradas.add(ideas.get(i));
             }
         }
