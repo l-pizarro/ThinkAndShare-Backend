@@ -44,9 +44,9 @@ public class ControladorVistaPrincipal {
     };
 
     @PostMapping("/desafios")
-    public Desafio publicarDesafio(String titulo, String descripcion, String inicio, String termino) {
-        Desafio desafio = new Desafio(titulo, descripcion, inicio, termino);
-        return desafioRepository.save(desafio);
+    public Desafio publicarDesafio(@Valid @RequestBody Desafio desafio) {
+        Desafio nuevoDesafio = new Desafio(desafio.getTitulo(), desafio.getDescripcion(), desafio.getInicio(), desafio.getTermino());
+        return desafioRepository.save(nuevoDesafio);
     };
 
     @GetMapping("/desafios")

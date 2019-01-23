@@ -23,8 +23,12 @@ public class Desafio {
     @Size(max=280)
     private String descripcion;
 
-    private Date inicio = new Date();
-    private Date termino = new Date();
+    @NotBlank
+    private String inicio;
+    @NotBlank
+    private String termino;
+    // private Date inicio = new Date();
+    // private Date termino = new Date();
     private Date createdAt = new Date();
 
     public Desafio() {
@@ -34,13 +38,15 @@ public class Desafio {
     public Desafio(String titulo, String descripcion, String inicio, String termino) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        try {
-            this.inicio = new SimpleDateFormat("dd/MM/yyyy").parse(inicio);
-            this.inicio = new SimpleDateFormat("dd/MM/yyyy").parse(termino);
-        }
-        catch (ParseException e) {
-            System.out.println("Formato de fecha incorrecto");
-        }
+        this.inicio = inicio.split(" ")[0];
+        this.termino = termino.split(" ")[0];
+        // try {
+        //     this.inicio = new SimpleDateFormat("dd/MM/yyyy").parse(inicio);
+        //     this.inicio = new SimpleDateFormat("dd/MM/yyyy").parse(termino);
+        // }
+        // catch (ParseException e) {
+        //     System.out.println("Formato de fecha incorrecto");
+        // }
     }
 
     public String getId() {
@@ -55,11 +61,11 @@ public class Desafio {
         return descripcion;
     }
 
-    public Date getInicio() {
+    public String getInicio() {
         return inicio;
     }
 
-    public Date getTermino() {
+    public String getTermino() {
         return termino;
     }
 
