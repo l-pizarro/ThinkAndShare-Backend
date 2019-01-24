@@ -139,5 +139,4 @@ public class ControladorVistaPrincipal {
 
         return desafioRepository.findAll(ordenamiento);
     };
-
 }
